@@ -12,7 +12,7 @@ void create(int l)
 {
 	head = new node;
 	p = head;
-	for (int j=1;j<=l;j++)
+	for (int j=1;j<l;j++)
 	{
 		cin >> x;
 		p -> x = x;
@@ -21,15 +21,19 @@ void create(int l)
 		q -> next = NULL;
 		p = q;
 	}
+	cin >> x;
+	p -> x = x;
+	p -> next = head;
 }
 
-void ls()
+void ls(int l)
 {
-	p = head ;
-	while (p -> next != NULL)
+	p = head;
+	for (int j=1;j<=l;j++)
 	{
 		cout << p -> x << endl;
 		p = p -> next; 
+	
 	}
 	
 }
@@ -57,8 +61,8 @@ int main()
 	int l,y;
 	cin >> l;
 	create(l);
-	ls();
+	ls(l);
 	cin >> y;
 	del(y);
-	ls();
+	ls(l-1);
 }
