@@ -21,9 +21,10 @@ int bfs()
 	do{ 
 		head++;
 		now = data[head];
-		for (int i = 1;i <= 3;i++)//´Óiµ¹ 
-			for (int j = 1;j <= 3;j++)//µ¹µ½j 
-				if (now.water[i] >= 0 && now.water[j] <= capa[j] && i != j)
+		//cout <<"now" <<' '<<now.water[1] << ' ' << now.water[2] << ' ' << now.water[3] << endl;
+		for (int i = 1;i <= 3;i++)//ä»Žiå€’ 
+			for (int j = 1;j <= 3;j++)//å€’åˆ°j 
+				if (now.water[i] > 0 && now.water[j] < capa[j] && i != j)
 				{
 					tail++;
 					temp = now;
@@ -31,16 +32,19 @@ int bfs()
 					temp.pnt = head;
 					if ((capa[j] - temp.water[j]) >= temp.water[i])
 					{
+						//cout <<"new1b"<<" "<<i<<" "<<temp.water[i]<<" "<<j<<" "<<temp.water[j]<<" "<<endl;
 						temp.water[j] += temp.water[i];
 						temp.water[i] = 0;
-						cout <<"new"<<i<<temp.water[i]<<j<<temp.water[j]<<endl;
+						//cout <<"new1a"<<" "<<i<<" "<<temp.water[i]<<" "<<j<<" "<<temp.water[j]<<" "<<endl;
 					}
 					else 
 					{
+						//cout <<"new2b"<<" "<<i<<" "<<temp.water[i]<<" "<<j<<" "<<temp.water[j]<<" "<<endl;
 						temp.water[i] -= (capa[j] - temp.water[j]);
 						temp.water[j] = capa[j];
-						cout <<"new2"<<i<<temp.water[i]<<j<<temp.water[j]<<endl;
+						//cout <<"new2a"<<" "<<i<<" "<<temp.water[i]<<" "<<j<<" "<<temp.water[j]<<" "<<endl;
 					}
+					data[tail] = temp;
 					if (repeat()) tail--;
 					else if(temp.water[1] == 40 && temp.water[2] == 40) return 1;
 				}	
@@ -66,5 +70,5 @@ int main()
 		}
 		for (int i = dep-1;i >= 0;i--) cout << data[ans[i]].water[1] << ' ' << data[ans[i]].water[2] << ' ' << data[ans[i]].water[3] << endl;
 	}
-	else cout << "ÎÞ½â£¡"<<endl;
+	else cout << "æ— è§£ï¼"<<endl;
 }
