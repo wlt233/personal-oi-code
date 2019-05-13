@@ -52,7 +52,7 @@ void out(int no)
 		pnt = data[pnt].pnt;
 		ans[i] = pnt;
 	}
-	for (int i = dep-1;i >= 0;i--) 
+	for (int i = dep-1;i >= 1;i--) 
 	{
 		cout << setw(3) << ans[i] << " : ";
 		for (int j = 1; j <=7; j++) 
@@ -115,4 +115,3 @@ int main()
 	else cout << "No solution!"<<endl; 
 	*/
 }
-
