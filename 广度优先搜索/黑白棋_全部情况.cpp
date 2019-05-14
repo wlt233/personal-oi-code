@@ -44,7 +44,7 @@ void out(int no)
 		else if (data[1].a[j] == 2) cout << 'K' << ' ';
 		else cout << "  ";
 	cout << endl;
-	int dep = data[no].dep,pnt = tail;
+	int dep = data[no].dep,pnt = no;
 	int ans[dep];
 	ans[0] = no;
 	for (int i = 1;i < dep;i++)
