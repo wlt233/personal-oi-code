@@ -9,7 +9,7 @@ int main()
 	*/
 	
 	
-	//第一问 
+	//the first question
 	a[1][0] = 1; a[2][0]=0;
 	for (int i = 1; i < m; i++)
 	{
@@ -49,7 +49,7 @@ int main()
 	}
 	
 	
-	//第二问 
+	//the second question
 	int s = 0;
 	int sh[10];
 	for (int i = 0; i < m; i++)
