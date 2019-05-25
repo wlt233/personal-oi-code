@@ -20,7 +20,7 @@ int main()
 			if (a[0][j] >= a[0][i])
 				if (a[1][j] >= maxj)
 				{
-					maxj = a[1][j];
+					maxj = a[1][j] + 1;
 					a[1][i] = a[1][j] + 1;
 					a[2][i] = j;
 				}
