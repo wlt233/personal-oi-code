@@ -5,9 +5,10 @@ int main()
 	freopen("chorus.in","r",stdin);
     freopen("chorus.ans","w",stdout);
     
-	int m,a[9][m];
-	
+	int m;
 	cin >> m;
+	
+	int a[9][m];
 	for (int i = 0; i < m; i++)
 	{
 		 cin >> a[0][i];
@@ -62,7 +63,7 @@ int main()
 	
 	for (int i = 0; i < m; i++)
 	{
-		cout << i+1 <<" "<< a[0][i]<<" " <<a[1][i] <<" " <<a[3][i]<<" " <<a[4][i]<<" " <<a[8][i]<<endl;
+		//cout << i+1 <<" "<< a[0][i]<<" " <<a[1][i] <<" " <<a[3][i]<<" " <<a[4][i]<<" " <<a[8][i]<<endl;
 	} 
 	
 	
@@ -73,7 +74,7 @@ int main()
 	{
 		if (a[8][i] > maxans) maxans = a[8][i]; maxpoi = i;
 	} 
-	cout << maxans;
+	cout << m - maxans;
 	/*
 	int anslist[maxans]; anslist[maxans-1] = maxpoi;
 	int pnt = a[2][maxpoi];
@@ -92,7 +93,6 @@ int main()
     fclose(stdout);
 
 }
-
 
 
 
